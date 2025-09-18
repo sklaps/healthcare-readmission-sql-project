@@ -58,3 +58,7 @@ By combining SQL queries with Excel visualizations, we turned raw healthcare dat
 ## ✍️ Author
 Created by **SK** ✨  
 *(alias for portfolio use)*  
+## 📄 Project Report (PDF)
+
+You can view the full detailed report here:  
+[Healthcare_SQL_Project_SK.pdf](./Healthcare_SQL_Project_SK.pdf)
