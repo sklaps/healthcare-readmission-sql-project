@@ -1,64 +1,98 @@
-# 🏥 HealthLens: Unlocking Diabetes Patient Insights with SQL + Excel
+
+# Healthcare SQL Analytics Project – SK
 
 ## 📌 Project Overview
-This project focuses on analyzing a real-world **diabetes hospital dataset** using **SQL** and **Excel**.  
-The goal is to identify key patterns in **readmissions, age distribution, procedures, and hospital trends**.  
+This project analyzes a real-world healthcare dataset (Diabetes 130-US hospitals) using SQL for querying and Excel for visualization.  
+The focus is on uncovering **patterns in patient readmissions, demographics, and hospital stay durations**.  
 
-By combining SQL queries with Excel visualizations, we turned raw healthcare data into actionable insights for doctors and hospital managers.
-
----
-
-## 🔍 Business Questions & Answers
-
-### **Q1. Which age groups are readmitted the most?**
-- **Query:** Count of patients readmitted grouped by age.
-- **Insight:** Helps identify which age groups need more follow-up care.
-
-### **Q2. What are the most common primary diagnoses?**
-- **Query:** Top 10 primary diagnoses by frequency.
-- **Insight:** Reveals the most common health issues requiring hospital attention.
-
-### **Q3. Which hospitals admit the highest number of patients?**
-- **Query:** Patient count grouped by hospital ID.
-- **Insight:** Highlights workload distribution across hospitals.
-
-### **Q4. Which medical procedures are performed most frequently?**
-- **Query:** Count of procedures grouped by procedure type.
-- **Insight:** Shows resource demand and planning needs.
-
-### **Q5. What is the average hospital stay duration per age group?**
-- **Query:** Avg. length of stay grouped by age.
-- **Insight:** Useful for capacity planning and understanding recovery trends.
+✅ SQL queries for 5 business questions  
+✅ Visualizations created in Excel (saved as images)  
+✅ Insights for each analysis  
 
 ---
 
-## 📊 Visualizations
-- **Bar Charts** → Top 10 diagnoses, procedures, hospital admissions  
-- **Column Charts** → Readmissions by age group  
-- **Line Chart** → Avg. stay duration by age  
+## 🔍 Business Questions & Insights
+
+## 🔍 Business Questions & Insights
+
+### Q1. Which age group has the highest readmission rate?
+```sql
+SELECT age, COUNT(*) AS readmission_count
+FROM newhospitaldata
+WHERE readmitted <> 'NO'
+GROUP BY age
+ORDER BY readmission_count DESC;
+
+💡 Insights
+
+Middle-aged and elderly patients tend to have higher readmissions.
+
+Younger patients (<30) show fewer readmissions.
+
+Targeted care plans for 50+ could reduce re-hospitalizations.
+
+
+
+Q2. What is the average hospital stay across age groups?
+SELECT age, AVG(time_in_hospital) AS avg_stay
+FROM newhospitaldata
+GROUP BY age
+ORDER BY avg_stay DESC;
+
+💡 Insights
+
+Average stay increases with age.
+
+Patients over 70 have the longest hospital stays.
+
+This highlights resource planning needs for elderly care.
+
+
+Q3. Do male or female patients take more medications on average?
+SELECT gender, AVG(num_medications) AS avg_meds
+FROM newhospitaldata
+GROUP BY gender;
+📊 Chart:
+
+
+💡 Insights
+
+Female patients slightly edge out males in average medications.
+
+Differences are not very large but could inform prescription monitoring.
+
+A deeper breakdown by age + gender could be insightful.
+
+Q4. Which gender has higher readmission rates?
+SELECT gender, COUNT(*) AS readmission_count
+FROM newhospitaldata
+WHERE readmitted <> 'NO'
+GROUP BY gender
+ORDER BY readmission_count DESC;
+
+💡 Insights
+
+Female patients have slightly higher readmission counts.
+
+Gender difference is smaller compared to age-driven readmissions.
+
+Suggests age > gender as the stronger predictor.
+
+Q5. Does longer hospital stay reduce readmission rates?
+SELECT time_in_hospital, COUNT(*) AS readmission_count
+FROM newhospitaldata 
+WHERE readmitted <> 'NO'
+GROUP BY time_in_hospital
+ORDER BY time_in_hospital;
+
+💡 Insights
+
+Shorter stays (1–3 days) show higher readmissions.
+
+Moderate stays (~5–7 days) lower readmissions.
+
+Very long stays (10+) don’t guarantee lower readmissions → may point to complex conditions.
+
 
 ---
 
-## 💡 Key Insights
-1. Senior patients show the highest **readmission rates**, suggesting a need for better post-discharge care.  
-2. A small set of **diagnoses dominate hospital admissions**, highlighting priority areas for healthcare intervention.  
-3. A handful of hospitals handle a disproportionate share of cases — these may need extra staffing/resources.  
-4. Certain procedures are performed **far more frequently**, which can help optimize supply chain management.  
-5. Average hospital stay varies sharply by age, useful for hospital bed capacity planning.  
-
----
-
-## 👨‍💻 Tech Stack
-- **SQL (MySQL Workbench)** → Data analysis & querying  
-- **Excel** → Charts, pivot tables, and data visualization  
-- **GitHub** → Documentation and version control  
-
----
-
-## ✍️ Author
-Created by **SK** ✨  
-*(alias for portfolio use)*  
-## 📄 Project Report (PDF)
-
-You can view the full detailed report here:  
-[Healthcare_SQL_Project_SK.pdf](./Healthcare_SQL_Project_SK.pdf)
