@@ -24,6 +24,7 @@ FROM newhospitaldata
 WHERE readmitted <> 'NO'
 GROUP BY age
 ORDER BY readmission_count DESC;
+![Q1 Chart](Picture1.png)
 
 
 💡 Insights
@@ -41,7 +42,7 @@ SELECT age, AVG(time_in_hospital) AS avg_stay
 FROM newhospitaldata
 GROUP BY age
 ORDER BY avg_stay DESC;
-
+![Q2 Chart](Picture2.png)
 💡 Insights
 
 Average stay increases with age.
@@ -55,7 +56,7 @@ Q3. Do male or female patients take more medications on average?
 SELECT gender, AVG(num_medications) AS avg_meds
 FROM newhospitaldata
 GROUP BY gender;
-📊 Chart:
+![Q3 Chart](Picture3.png)
 
 
 💡 Insights
@@ -73,6 +74,7 @@ WHERE readmitted <> 'NO'
 GROUP BY gender
 ORDER BY readmission_count DESC;
 
+![Q4 Chart](Picture4.png)
 💡 Insights
 
 Female patients have slightly higher readmission counts.
@@ -87,7 +89,7 @@ FROM newhospitaldata
 WHERE readmitted <> 'NO'
 GROUP BY time_in_hospital
 ORDER BY time_in_hospital;
-
+![Q5 Chart](Picture5.png)
 💡 Insights
 
 Shorter stays (1–3 days) show higher readmissions.
