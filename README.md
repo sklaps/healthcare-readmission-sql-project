@@ -17,11 +17,14 @@ The focus is on uncovering **patterns in patient readmissions, demographics, and
 
 ### Q1. Which age group has the highest readmission rate?
 ```sql
+### Q1. Which age group has the highest readmission rate?
+```sql
 SELECT age, COUNT(*) AS readmission_count
 FROM newhospitaldata
 WHERE readmitted <> 'NO'
 GROUP BY age
 ORDER BY readmission_count DESC;
+
 
 💡 Insights
 
