@@ -14,12 +14,13 @@ The focus is on uncovering patterns in patient readmissions, demographics, and h
 
 
 
-**🔍 Business Questions & Insights**
+**🔍 Business Questions & Insights**   
+********************
 
 
 
 **Q1. Which age group has the highest readmission rate?********
-
+********
 SELECT age, COUNT(*) AS readmission_count
 FROM newhospitaldata
 WHERE readmitted <> 'NO'
@@ -40,7 +41,7 @@ Hospitals could focus targeted follow-ups and discharge plans for 50+ age groups
 
 
 **Q2. What is the average hospital stay across age groups?********
-
+************
 SELECT age, AVG(time_in_hospital) AS avg_stay
 FROM newhospitaldata
 GROUP BY age
@@ -61,7 +62,7 @@ This highlights the need for specialized elderly care programs and bed managemen
 
 
 ****Q3. Do male or female patients take more medications on average?********
-
+************
 SELECT gender, AVG(num_medications) AS avg_meds
 FROM newhospitaldata
 GROUP BY gender;
@@ -80,7 +81,7 @@ A deeper age + gender breakdown could reveal prescription risk patterns.
 
 
 **Q4. Which gender has higher readmission rates?**
-
+************
 SELECT gender, COUNT(*) AS readmission_count
 FROM newhospitaldata
 WHERE readmitted <> 'NO'
@@ -100,7 +101,7 @@ Hospitals should prioritize age-focused readmission reduction plans rather than 
 
 
 **Q5. Does longer hospital stay reduce readmission rates?**
-
+************
 SELECT time_in_hospital, COUNT(*) AS readmission_count
 FROM newhospitaldata
 WHERE readmitted <> 'NO'
@@ -120,7 +121,27 @@ Moderate stays (5–7 days) show the lowest readmission risk.
 
 Very long stays (10+ days) don’t guarantee fewer readmissions → often linked to serious chronic conditions.
 
+****************
+📌 Project Summary
 
+This project demonstrates how SQL + Excel can be combined to turn raw hospital records into actionable insights.
+
+Key Findings:
+
+👵 Age is the biggest predictor of readmissions.
+
+⚖️ Gender has some effect, but weaker compared to age.
+
+🏥 Discharge planning and stay duration are critical in lowering readmissions.
+
+Skills Demonstrated:
+
+SQL: data cleaning, grouping, aggregation.
+
+Excel: charting, visual storytelling.
+
+Business insights: linking technical results to healthcare impact.
+****************
 📌 Project Summary
 
 This project demonstrates how SQL + Excel can be combined to turn raw hospital records into actionable insights.
@@ -141,25 +162,5 @@ Excel: charting, visual storytelling.
 
 Business insights: linking technical results to healthcare impact.
 
-📌 Project Summary
-
-This project demonstrates how SQL + Excel can be combined to turn raw hospital records into actionable insights.
-
-Key Findings:
-
-👵 Age is the biggest predictor of readmissions.
-
-⚖️ Gender has some effect, but weaker compared to age.
-
-🏥 Discharge planning and stay duration are critical in lowering readmissions.
-
-Skills Demonstrated:
-
-SQL: data cleaning, grouping, aggregation.
-
-Excel: charting, visual storytelling.
-
-Business insights: linking technical results to healthcare impact.
-
-
-**Created by SK**
+**
+**Created by SK********************
