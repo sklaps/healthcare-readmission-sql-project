@@ -6,12 +6,18 @@ This project analyzes a real-world healthcare dataset (Diabetes 130-US hospitals
 The focus is on uncovering patterns in patient readmissions, demographics, and hospital stay durations.
 
 
+
+
 ✅ SQL queries for 5 business questions
 ✅ Visualizations created in Excel (saved as images)
 ✅ Insights for each analysis
 
-🔍 Business Questions & Insights
-**
+
+
+**🔍 Business Questions & Insights**
+
+
+
 **Q1. Which age group has the highest readmission rate?********
 
 SELECT age, COUNT(*) AS readmission_count
@@ -42,7 +48,7 @@ ORDER BY avg_stay DESC;
 
 
 Chart
-
+![Q2 Chart](Picture2.png)
 
 💡 Insights
 
@@ -61,7 +67,7 @@ FROM newhospitaldata
 GROUP BY gender;
 
 Chart
-
+![Q3 Chart](Picture3.png)
 
 💡 Insights
 
@@ -83,7 +89,7 @@ ORDER BY readmission_count DESC;
 
 
 Chart
-
+![Q4 Chart](Picture4.png)
 💡 Insights
 
 Female patients show slightly higher readmissions than males.
@@ -103,6 +109,8 @@ ORDER BY time_in_hospital;
 
 
 Chart
+![Q5 Chart](Picture5.png)
+
 
 💡 Insights
 
