@@ -11,7 +11,6 @@ The focus is on uncovering **patterns in patient readmissions, demographics, and
 
 ---
 
-## 🔍 Business Questions & Insights
 
 ## 🔍 Business Questions & Insights
 
