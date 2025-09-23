@@ -14,8 +14,7 @@ The focus is on uncovering **patterns in patient readmissions, demographics, and
 
 ## 🔍 Business Questions & Insights
 
-### Q1. Which age group has the highest readmission rate?
-```sql
+
 ### Q1. Which age group has the highest readmission rate?
 ```sql
 SELECT age, COUNT(*) AS readmission_count
