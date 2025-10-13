@@ -10,7 +10,7 @@ The focus is on uncovering patterns in patient readmissions, demographics, and h
 ✅ SQL queries for 5 business questions
 ✅ Visualizations created in Excel (saved as images)
 ✅ Insights for each analysis
-
+******************************
 
 
 ## 🔍 Business Questions & Insights
