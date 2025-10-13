@@ -1,5 +1,4 @@
-****Healthcare SQL Analytics Project – SK**********
-**********
+# Healthcare SQL Analytics Project – SK
 📌 Project Overview
 
 This project analyzes a real-world healthcare dataset (Diabetes 130-US hospitals, stored as newhospitaldata) using SQL for querying and Excel for visualization.
